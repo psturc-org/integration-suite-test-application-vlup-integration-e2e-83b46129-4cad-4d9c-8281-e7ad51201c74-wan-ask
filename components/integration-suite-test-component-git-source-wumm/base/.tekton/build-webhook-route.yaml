@@ -1,0 +1,22 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    build.appstudio.openshift.io/application: integration-suite-test-application-vlup
+    build.appstudio.openshift.io/build: "true"
+    build.appstudio.openshift.io/component: integration-suite-test-component-git-source-wumm
+    build.appstudio.openshift.io/type: build
+    build.appstudio.openshift.io/version: "0.1"
+    pipelines.appstudio.openshift.io/type: build
+  creationTimestamp: null
+  name: elintegration-suite-test-component-git-source-wumm
+  namespace: integration-e2e-83b46129-4cad-4d9c-8281-e7ad51201c74
+spec:
+  path: /
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: el-integration-suite-test-component-git-source-wumm
+    weight: null
+status: {}

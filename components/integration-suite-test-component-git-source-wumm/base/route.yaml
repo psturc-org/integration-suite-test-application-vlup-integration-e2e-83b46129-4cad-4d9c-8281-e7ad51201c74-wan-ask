@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: integration-suite-test-component-git-source-wumm
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: integration-suite-test-component-git-source-wumm
+    app.kubernetes.io/part-of: integration-suite-test-application-vlup
+  name: integration-suite-test-component-git-source-wumm
+  namespace: integration-e2e-83b46129-4cad-4d9c-8281-e7ad51201c74
+spec:
+  port:
+    targetPort: 8081
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: integration-suite-test-component-git-source-wumm
+    weight: 100
+status: {}
